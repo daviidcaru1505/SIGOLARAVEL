@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+}
+
+/* .mb-4{
+    align-items: center;
+    justify-content: center;
+} */
+
+.bienve-1{
+    text-align: center;
+}
+
+.link-princi{
+  text-decoration: none;
+  color: white;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.container{
+  background-color: rgb(2, 4, 23);
+}
+
+.text-foot{
+  color: white;
+}
+
+.text-body-secondary{
+  color: white;
+}
+
+.mi-boton-personalizado{
+  height: 50px;
+}
