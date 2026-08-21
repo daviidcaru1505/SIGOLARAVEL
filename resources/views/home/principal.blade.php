@@ -80,7 +80,7 @@
                     Centraliza la recolección de datos, administra encuestas activas y gestiona la clasificación socioeconómica territorial bajo estándares actualizados.
                 </p>
                 <div class="d-flex gap-3 flex-wrap">
-                    <a href="{{ route('encuestas.create') }}" class="btn btn-action-primary btn-lg fw-bold px-4 shadow-sm border-0">
+                    <a href="{{ route('encuestas.create') }}" class="btn btn-action-primary btn-lg fw-bold px-4 shadow-sm border-0 rounded-3">
                         <i class="bi bi-file-earmark-plus-fill me-2"></i> Nueva Encuesta
                     </a>
                     <a href="{{ route('consultas.create') }}" class="btn btn-outline-light btn-lg px-4 fw-semibold border-2 rounded-3">
@@ -97,7 +97,7 @@
     {{-- Sección Explicativa: ¿Qué es el Sisbén? --}}
     <div class="row align-items-stretch mb-5 g-4">
         <div class="col-lg-7">
-            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-card" style="background: #ffffff;">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-card bg-white">
                 <div class="d-flex align-items-center mb-3">
                     <div class="icon-wrapper me-3" style="background-color: #e0e7ff; color: #4f46e5;">
                         <i class="bi bi-info-circle-fill fs-3"></i>
@@ -145,7 +145,7 @@
 
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3 bg-white">
                     <div class="card-body">
                         <div class="icon-wrapper mb-3 mx-auto" style="background-color: #e0e7ff; color: #4f46e5;">
                             <i class="bi bi-pencil-square fs-3"></i>
@@ -157,7 +157,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3 bg-white">
                     <div class="card-body">
                         <div class="icon-wrapper mb-3 mx-auto" style="background-color: #d1fae5; color: #059669;">
                             <i class="bi bi-house-heart-fill fs-3"></i>
@@ -169,7 +169,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3 bg-white">
                     <div class="card-body">
                         <div class="icon-wrapper mb-3 mx-auto" style="background-color: #fef3c7; color: #d97706;">
                             <i class="bi bi-cpu-fill fs-3"></i>
@@ -181,7 +181,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 hover-card text-center p-3 bg-white">
                     <div class="card-body">
                         <div class="icon-wrapper mb-3 mx-auto" style="background-color: #cffaff; color: #0891b2;">
                             <i class="bi bi-award-fill fs-3"></i>
@@ -203,7 +203,7 @@
 
         <div class="row g-4">
             <div class="col-md-6 col-xl-3">
-                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-a h-100 p-2">
+                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-a h-100 p-2 bg-white">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="badge badge-grupo-a fs-6 px-3 py-2 rounded-pill fw-bold">Grupo A</span>
@@ -216,7 +216,7 @@
             </div>
 
             <div class="col-md-6 col-xl-3">
-                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-b h-100 p-2">
+                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-b h-100 p-2 bg-white">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="badge badge-grupo-b fs-6 px-3 py-2 rounded-pill fw-bold">Grupo B</span>
@@ -229,7 +229,7 @@
             </div>
 
             <div class="col-md-6 col-xl-3">
-                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-c h-100 p-2">
+                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-c h-100 p-2 bg-white">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="badge badge-grupo-c fs-6 px-3 py-2 rounded-pill fw-bold">Grupo C</span>
@@ -242,7 +242,7 @@
             </div>
 
             <div class="col-md-6 col-xl-3">
-                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-d h-100 p-2">
+                <div class="card border-0 shadow-sm rounded-4 hover-card card-grupo-d h-100 p-2 bg-white">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="badge badge-grupo-d fs-6 px-3 py-2 rounded-pill fw-bold">Grupo D</span>
