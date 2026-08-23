@@ -71,7 +71,7 @@
             </span>
             <h1 class="display-4 fw-black fw-bold brand-title mb-3">Bienvenido a SIGO</h1>
             <p class="lead text-secondary mb-4">
-                Sistema Integral de Gestión de Encuestas para la administración, tabulación y consulta de información socioeconómica del Sisbén.
+                Sistema Integral de Gestión de Encuestas para la administración, tabulación y consulta de información socioeconómica.
             </p>
 
             <div class="card border-0 rounded-4 p-4 hover-card" style="background-color: #f8fafc;">
@@ -79,10 +79,10 @@
                     <div class="icon-box me-3">
                         <i class="bi bi-shield-check fs-4"></i>
                     </div>
-                    <h5 class="fw-bold mb-0" style="color: #0f172a;">¿Qué es el Sisbén?</h5>
+                    <h5 class="fw-bold mb-0" style="color: #0f172a;">Plataforma Centralizada</h5>
                 </div>
                 <p class="text-muted mb-0 small lh-base">
-                    Es el sistema utilizado por el Gobierno de Colombia para clasificar a la población de forma técnica según sus condiciones de vida e ingresos, permitiendo la focalización transparente de programas sociales.
+                    Un entorno tecnológico diseñado para organizar y analizar datos de caracterización poblacional de forma ágil, segura y estructurada.
                 </p>
             </div>
         </div>

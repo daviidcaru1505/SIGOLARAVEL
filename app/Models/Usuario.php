@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
+    use HasFactory;
+
     protected $table = 'usuario';
     protected $primaryKey = 'idUsuario';
     public $timestamps = false;
@@ -24,17 +27,15 @@ class Usuario extends Model
         'Contrasena',
     ];
 
-    protected $hidden = [
-        'Contrasena',
-    ];
-
+    // Relación con el Modelo Rol
     public function rol()
     {
         return $this->belongsTo(Rol::class, 'idRol', 'idRol');
     }
 
-    public function nucleosFamiliares()
+    // Relación con Encuesta
+    public function encuesta()
     {
-        return $this->hasMany(NucleoFamiliar::class, 'idUsuario', 'idUsuario');
+        return $this->hasOne(Encuesta::class, 'idUsuario', 'idUsuario');
     }
 }

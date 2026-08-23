@@ -4,7 +4,6 @@
 
 @section('content')
 
-{{-- Estilos personalizados SIGO --}}
 <style>
     :root {
         --sigo-primary: #4f46e5;
@@ -59,7 +58,6 @@
     }
 </style>
 
-{{-- Iconos de Bootstrap --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="container my-5">
@@ -68,7 +66,6 @@
 
             <div class="card card-resultados bg-white">
                 
-                {{-- Header con degradado --}}
                 <div class="header-resultados text-white text-center p-4">
                     <h4 class="mb-0 fw-bold tracking-wide">
                         <i class="bi bi-file-earmark-text me-2"></i>RESULTADOS DE LA CONSULTA
@@ -87,6 +84,7 @@
                                         <th class="py-3">Documento</th>
                                         <th class="py-3">ID Núcleo Familiar</th>
                                         <th class="py-3">ID Encuesta</th>
+                                        <th class="py-3">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -101,10 +99,29 @@
                                                 </span>
                                             </td>
                                             <td class="py-3 text-muted">
-                                                <i class="bi bi-people me-1"></i>{{ $fila->idNucleoFamiliar }}
+                                                @if($fila->idNucleoFamiliar)
+                                                    <i class="bi bi-people me-1"></i>#{{ $fila->idNucleoFamiliar }}
+                                                @else
+                                                    <span class="badge bg-light text-muted border">Sin núcleo</span>
+                                                @endif
                                             </td>
                                             <td class="py-3 text-muted">
-                                                <i class="bi bi-clipboard-data me-1"></i>{{ $fila->idEncuesta }}
+                                                @if($fila->idEncuesta)
+                                                    <i class="bi bi-clipboard-data me-1"></i>#{{ $fila->idEncuesta }}
+                                                @else
+                                                    <span class="badge bg-light text-muted border">Sin encuesta</span>
+                                                @endif
+                                            </td>
+                                            <td class="py-3">
+                                                @if(!$fila->idEncuesta)
+                                                    <a href="{{ route('encuestas.create', ['idUsuario' => $fila->idUsuario]) }}" class="btn btn-sm btn-outline-primary rounded-3 fw-semibold">
+                                                        <i class="bi bi-plus-circle me-1"></i>Crear Encuesta
+                                                    </a>
+                                                @else
+                                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-3">
+                                                        <i class="bi bi-check-circle-fill me-1"></i>Registrada
+                                                    </span>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
@@ -112,7 +129,6 @@
                             </table>
                         </div>
                     @else
-                        {{-- Estado vacío estilizado --}}
                         <div class="text-center py-5">
                             <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3 p-3" style="background-color: #fee2e2; color: #dc2626; width: 80px; height: 80px;">
                                 <i class="bi bi-search-heart fs-1"></i>
@@ -122,7 +138,6 @@
                         </div>
                     @endif
 
-                    {{-- Botones de Navegación --}}
                     <div class="d-flex justify-content-center gap-3 mt-4 pt-2">
                         <a href="{{ route('consultas.create') }}" class="btn btn-primary btn-action-main px-4 py-2.5 fw-bold rounded-3 text-white">
                             <i class="bi bi-arrow-left me-2"></i> Nueva Consulta

@@ -67,7 +67,7 @@
         </span>
         <h1 class="display-3 fw-bold text-white mb-2">Bienvenido a SIGO</h1>
         <p class="fs-4 text-white-50 mx-auto mb-4" style="max-width: 800px;">
-            Sistema de Identificación de Grupos Socioeconómicos para el apoyo a procesos de caracterización territorial y gestión de información relacionada con el Sisbén.
+            Sistema Integral de Identificación y Gestión de Grupos Socioeconómicos para la caracterización eficiente de la población.
         </p>
         <a href="{{ route('login') }}" class="btn btn-access btn-lg fw-bold px-5 py-3 shadow-sm border-0 rounded-3">
             <i class="bi bi-box-arrow-in-right me-2"></i> Acceder al Sistema
@@ -77,7 +77,7 @@
 
 <div class="container mb-5">
 
-    {{-- INFORMACIÓN GENERAL & SISBÉN --}}
+    {{-- INFORMACIÓN GENERAL & OBJETIVO SIGO --}}
     <div class="row align-items-stretch g-4 mb-5">
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4 p-4 hover-card h-100 bg-white">
@@ -88,10 +88,10 @@
                     <h3 class="fw-bold mb-0" style="color: #0f172a;">¿Qué es SIGO?</h3>
                 </div>
                 <p class="text-secondary lh-base">
-                    Es una plataforma tecnológica diseñada para facilitar el registro, consulta y administración de información relacionada con los hogares y su clasificación socioeconómica.
+                    Es una plataforma tecnológica avanzada diseñada para facilitar el registro, caracterización y administración centralizada de la información socioeconómica de los hogares.
                 </p>
                 <p class="text-secondary lh-base mb-0">
-                    Permite almacenar información de usuarios, encuestas, novedades y consultas de manera centralizada, eficiente y totalmente segura.
+                    Permite consolidar datos de encuestas, usuarios, novedades y consultas mediante un sistema ágil, estructurado e integrado.
                 </p>
             </div>
         </div>
@@ -100,15 +100,15 @@
             <div class="card border-0 shadow-sm rounded-4 p-4 hover-card h-100 bg-white">
                 <div class="d-flex align-items-center mb-3">
                     <div class="icon-wrapper-module me-3" style="background-color: #d1fae5; color: #059669;">
-                        <i class="bi bi-patch-check-fill fs-3"></i>
+                        <i class="bi bi-bullseye fs-3"></i>
                     </div>
-                    <h3 class="fw-bold mb-0" style="color: #0f172a;">¿Qué es el Sisbén?</h3>
+                    <h3 class="fw-bold mb-0" style="color: #0f172a;">Objetivo de SIGO</h3>
                 </div>
                 <p class="text-secondary lh-base">
-                    Es el sistema de identificación desarrollado por el Gobierno Nacional de Colombia para ordenar a la población según sus condiciones de vida e ingresos.
+                    Optimizar la clasificación de la población registrada para permitir un análisis transparente, rápido y confiable de la información socioeconómica almacenada.
                 </p>
                 <div class="alert border-0 rounded-3 mt-auto mb-0 p-3" style="background-color: #f0fdf4; color: #166534;">
-                    <i class="bi bi-bullseye me-2 fs-5"></i> <strong>Focalización:</strong> Permite orientar la inversión social e inclusión en programas gubernamentales.
+                    <i class="bi bi-patch-check-fill me-2 fs-5"></i> <strong>Gestión Eficiente:</strong> Garantiza el control preciso de fichas socioeconómicas y solicitudes.
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-{{-- CLASIFICACIÓN SIGO (Diseño Grid en Cards) --}}
+    {{-- CLASIFICACIÓN SIGO (Diseño Grid en Cards) --}}
     <div class="mb-5">
         <div class="text-center mb-4">
             <h3 class="fw-bold" style="color: #0f172a;">Clasificación SIGO</h3>
@@ -181,7 +181,7 @@
                             <i class="bi bi-exclamation-octagon-fill text-danger fs-4"></i>
                         </div>
                         <h5 class="fw-bold" style="color: #1e293b;">Pobreza Extrema</h5>
-                        <p class="text-muted small mb-0">Población con menor capacidad de generación de ingresos y condiciones de vulnerabilidad.</p>
+                        <p class="text-muted small mb-0">Población con menor capacidad de generación de ingresos y condiciones de vulnerabilidad alta.</p>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
                             <i class="bi bi-shield-exclamation text-warning fs-4"></i>
                         </div>
                         <h5 class="fw-bold" style="color: #1e293b;">Pobreza Moderada</h5>
-                        <p class="text-muted small mb-0">Hogares con mayor capacidad de ingresos que el grupo A, pero con alta vulnerabilidad.</p>
+                        <p class="text-muted small mb-0">Hogares con mayor capacidad de ingresos que el grupo A, pero con condiciones de vulnerabilidad.</p>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                             <i class="bi bi-person-badge-fill text-info fs-4"></i>
                         </div>
                         <h5 class="fw-bold" style="color: #1e293b;">Población Vulnerable</h5>
-                        <p class="text-muted small mb-0">Población en riesgo de caer en condición de pobreza ante eventualidades.</p>
+                        <p class="text-muted small mb-0">Población en riesgo de caer en condición de pobreza ante eventualidades económicas.</p>
                     </div>
                 </div>
             </div>
@@ -223,11 +223,13 @@
                             <i class="bi bi-shield-check text-success fs-4"></i>
                         </div>
                         <h5 class="fw-bold" style="color: #1e293b;">No Pobre / No Vulnerable</h5>
-                        <p class="text-muted small mb-0">Población autosuficiente económicamente que no requiere asistencia prioritaria.</p>
+                        <p class="text-muted small mb-0">Población con estabilidad socioeconómica que no requiere atención prioritaria.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
 
 @endsection

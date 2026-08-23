@@ -10,7 +10,6 @@ class AuthController extends Controller
 {
     /**
      * Muestra el formulario de inicio de sesión.
-     * Reemplaza a vista/iniciosesion/frminiciosesion.php
      */
     public function showLogin()
     {
@@ -18,8 +17,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Procesa el inicio de sesión.
-     * Reemplaza a controlador/iniciosesion/iniciosesion.php
+     * Procesa el inicio de sesión para Asesores y Encuestados.
      */
     public function login(Request $request)
     {
@@ -28,24 +26,43 @@ class AuthController extends Controller
             'contrasena' => 'required',
         ]);
 
+        // Limpiamos espacios alrededor del correo y contraseña
+        $correoInput = trim($request->correo);
+        $contrasenaInput = trim($request->contrasena);
+
+        // Buscamos ignorando mayúsculas/minúsculas y espacios en el correo
         $usuario = Usuario::with('rol')
-            ->where('Correo', $request->correo)
+            ->whereRaw('LOWER(TRIM(Correo)) = ?', [strtolower($correoInput)])
             ->first();
 
-        // Soporta contraseñas ya migradas con Hash y, como respaldo,
-        // contraseñas antiguas guardadas en texto plano (proyecto original).
-        $credencialesValidas = $usuario && (
-    $usuario->Contrasena === $request->contrasena
-    || Hash::check($request->contrasena, $usuario->Contrasena)
-);
-        if ($credencialesValidas) {
-            session([
-                'usuario_id' => $usuario->idUsuario,
-                'usuario_nombre' => $usuario->Nombre,
-                'usuario_rol' => $usuario->rol->Nombre ?? null,
-            ]);
+        if ($usuario) {
+            $hashGuardado = (string) $usuario->Contrasena;
 
-            return redirect()->route('principal')->with('exito', 'Bienvenido ' . $usuario->Nombre);
+            // 1. Verificación en texto plano (para los datos actuales de la BD)
+            $esPlanaValida = ($hashGuardado === $contrasenaInput);
+
+            // 2. Verificación con Hash de Laravel (Bcrypt/Argon)
+            $esHashValido = false;
+            if (str_starts_with($hashGuardado, '$2y$') || str_starts_with($hashGuardado, '$2b$') || str_starts_with($hashGuardado, '$2a$')) {
+                $esHashValido = Hash::check($contrasenaInput, $hashGuardado);
+            }
+
+            // 3. Verificación MD5 (por si existen contraseñas antiguas migadas)
+            $esMd5Valido = (md5($contrasenaInput) === $hashGuardado);
+
+            if ($esPlanaValida || $esHashValido || $esMd5Valido) {
+                // Obtener el rol desde la relación 'rol' o desde la columna 'Tipo' ('Asesor' / 'Encuestado')
+                $rolNombre = $usuario->rol->Nombre ?? $usuario->Tipo;
+
+                // Guardamos en sesión (en minúsculas para compatibilidad con Middleware de roles)
+                session([
+                    'usuario_id'     => $usuario->idUsuario,
+                    'usuario_nombre' => $usuario->Nombre,
+                    'usuario_rol'    => strtolower(trim($rolNombre)), 
+                ]);
+
+                return redirect()->route('principal')->with('exito', 'Bienvenido ' . $usuario->Nombre);
+            }
         }
 
         return back()->withErrors(['login' => 'No existe esta persona o la contraseña es incorrecta.']);

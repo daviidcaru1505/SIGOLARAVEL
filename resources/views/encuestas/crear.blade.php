@@ -72,10 +72,27 @@
                     <form action="{{ route('encuestas.store') }}" method="post">
                         @csrf
 
+                        {{-- Persona Encuestada (Campo Obligatorio de BD) --}}
+                        <div class="form-floating mb-3">
+                            <select class="form-select rounded-3" id="idUsuario" name="idUsuario" required>
+                                <option value="" disabled {{ old('idUsuario') ? '' : 'selected' }}>Seleccione una persona...</option>
+                                @if(isset($usuarios))
+                                    @foreach($usuarios as $usuario)
+                                        <option value="{{ $usuario->idUsuario }}" {{ old('idUsuario') == $usuario->idUsuario ? 'selected' : '' }}>
+                                            {{ $usuario->NumDocumento }} - {{ $usuario->Nombre }} {{ $usuario->Apellido }}
+                                        </option>
+                                    @endforeach
+                                @endif
+                            </select>
+                            <label for="idUsuario" class="text-muted">
+                                <i class="bi bi-person-fill me-1"></i> Persona Encuestada
+                            </label>
+                        </div>
+
                         {{-- Fecha y Hora --}}
                         <div class="form-floating mb-3">
                             <input type="datetime-local" class="form-control rounded-3" id="FechaCreacion" name="FechaCreacion" 
-                                value="{{ old('FechaCreacion') }}" required>
+                                value="{{ old('FechaCreacion', date('Y-m-d\TH:i')) }}" required>
                             <label for="FechaCreacion" class="text-muted">
                                 <i class="bi bi-calendar-event me-1"></i> Fecha y Hora
                             </label>
@@ -84,7 +101,7 @@
                         {{-- Estado del Usuario --}}
                         <div class="form-floating mb-3">
                             <select class="form-select rounded-3" id="Estado" name="Estado" required>
-                                <option value="" disabled selected>Seleccione una opción...</option>
+                                <option value="" disabled {{ old('Estado') ? '' : 'selected' }}>Seleccione una opción...</option>
                                 <option value="Activo" {{ old('Estado') == 'Activo' ? 'selected' : '' }}>Activo</option>
                                 <option value="Inactivo" {{ old('Estado') == 'Inactivo' ? 'selected' : '' }}>Inactivo</option>
                             </select>
@@ -96,7 +113,7 @@
                         {{-- Soporte --}}
                         <div class="form-floating mb-3">
                             <select class="form-select rounded-3" id="Soporte" name="Soporte" required>
-                                <option value="" disabled selected>Seleccione una opción...</option>
+                                <option value="" disabled {{ old('Soporte') ? '' : 'selected' }}>Seleccione una opción...</option>
                                 <option value="Documento" {{ old('Soporte') == 'Documento' ? 'selected' : '' }}>Documento</option>
                                 <option value="Certificado" {{ old('Soporte') == 'Certificado' ? 'selected' : '' }}>Certificado</option>
                                 <option value="Ninguno" {{ old('Soporte') == 'Ninguno' ? 'selected' : '' }}>Ninguno</option>
@@ -109,7 +126,7 @@
                         {{-- Nivel Socioeconómico --}}
                         <div class="form-floating mb-4">
                             <select class="form-select rounded-3" id="NivelSocioeconomico" name="NivelSocioeconomico" required>
-                                <option value="" disabled selected>Seleccione el grupo correspondiente...</option>
+                                <option value="" disabled {{ old('NivelSocioeconomico') ? '' : 'selected' }}>Seleccione el grupo correspondiente...</option>
                                 <option value="A" {{ old('NivelSocioeconomico') == 'A' ? 'selected' : '' }}>Grupo A - Pobreza Extrema</option>
                                 <option value="B" {{ old('NivelSocioeconomico') == 'B' ? 'selected' : '' }}>Grupo B - Pobreza Moderada</option>
                                 <option value="C" {{ old('NivelSocioeconomico') == 'C' ? 'selected' : '' }}>Grupo C - Vulnerable</option>

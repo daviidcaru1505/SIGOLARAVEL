@@ -1,24 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
-     * Página de bienvenida pública.
-     * Reemplaza a index.php
+     * Muestra la portada/página pública (ruta /)
      */
     public function index()
     {
-        return view('home.index');
+        return view('home.index'); // O la vista de inicio que tengas en resources/views/home/
     }
 
     /**
-     * Página principal luego de iniciar sesión.
-     * Reemplaza a vista/pgprincipal/pgprincipal.php
+     * Evalúa el rol tras iniciar sesión y redirecciona (ruta /principal)
      */
     public function principal()
     {
+        $rol = strtolower(session('usuario_rol'));
+
+        if ($rol === 'encuestado') {
+            return redirect()->route('encuestado.puntaje');
+        }
+
         return view('home.principal');
     }
 }

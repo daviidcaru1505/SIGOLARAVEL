@@ -38,7 +38,7 @@
         border-radius: 16px;
     }
 
-    /* Colores personalizados para las tarjetas de los Grupos Sisbén */
+    /* Colores personalizados para las tarjetas de los Grupos SIGO */
     .card-grupo-a { border-top: 5px solid #ef4444 !important; }
     .card-grupo-b { border-top: 5px solid #f59e0b !important; }
     .card-grupo-c { border-top: 5px solid #06b6d4 !important; }
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    {{-- Sección Explicativa: ¿Qué es el Sisbén? --}}
+    {{-- Sección Explicativa: ¿Qué es SIGO? --}}
     <div class="row align-items-stretch mb-5 g-4">
         <div class="col-lg-7">
             <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-card bg-white">
@@ -102,13 +102,13 @@
                     <div class="icon-wrapper me-3" style="background-color: #e0e7ff; color: #4f46e5;">
                         <i class="bi bi-info-circle-fill fs-3"></i>
                     </div>
-                    <h2 class="h3 mb-0 fw-bold" style="color: #1e293b;">¿Qué es el Sisbén?</h2>
+                    <h2 class="h3 mb-0 fw-bold" style="color: #1e293b;">¿Qué es SIGO?</h2>
                 </div>
                 <p class="text-muted fs-5 lh-base">
-                    El Sistema de Identificación de Potenciales Beneficiarios de Programas Sociales es una herramienta del Gobierno Nacional diseñada para clasificar a la población de forma técnica y transparente según sus condiciones socioeconómicas.
+                    Es una plataforma tecnológica diseñada para registrar, organizar y clasificar de forma técnica y transparente la información socioeconómica de los hogares y sus integrantes.
                 </p>
                 <div class="alert border-0 rounded-4 mt-auto mb-0 p-3" style="background-color: #f0fdf4; color: #166534;">
-                    <i class="bi bi-check-circle-fill me-2 fs-5"></i> <strong>Propósito clave:</strong> Focalizar el acceso a subsidios e inversión social priorizando los hogares vulnerables.
+                    <i class="bi bi-check-circle-fill me-2 fs-5"></i> <strong>Propósito clave:</strong> Optimizar el análisis de vulnerabilidad y facilitar la toma de decisiones informadas sobre la población.
                 </div>
             </div>
         </div>
@@ -175,7 +175,7 @@
                             <i class="bi bi-cpu-fill fs-3"></i>
                         </div>
                         <h5 class="fw-bold" style="color: #1e293b;">3. Clasificación</h5>
-                        <p class="text-muted small mb-0">Procesamiento de variables socioeconómicas por el algoritmo de tabulación.</p>
+                        <p class="text-muted small mb-0">Procesamiento de variables socioeconómicas por el algoritmo del sistema.</p>
                     </div>
                 </div>
             </div>
@@ -186,8 +186,8 @@
                         <div class="icon-wrapper mb-3 mx-auto" style="background-color: #cffaff; color: #0891b2;">
                             <i class="bi bi-award-fill fs-3"></i>
                         </div>
-                        <h5 class="fw-bold" style="color: #1e293b;">4. Beneficios</h5>
-                        <p class="text-muted small mb-0">Atención e inclusión eficiente dentro de las categorías de inversión pública.</p>
+                        <h5 class="fw-bold" style="color: #1e293b;">4. Caracterización</h5>
+                        <p class="text-muted small mb-0">Generación de la ficha socioeconómica y asignación del grupo correspondiente.</p>
                     </div>
                 </div>
             </div>
@@ -198,7 +198,7 @@
     <div class="mb-5">
         <div class="text-center mb-4">
             <h3 class="fw-bold" style="color: #0f172a;">Clasificación por Grupos</h3>
-            <p class="text-muted">Estructura actual de categorización de población</p>
+            <p class="text-muted">Estructura actual de categorización de la población</p>
         </div>
 
         <div class="row g-4">
