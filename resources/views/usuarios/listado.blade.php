@@ -48,6 +48,19 @@
         color: #ffffff;
         box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
     }
+
+    .btn-action-add {
+        background-color: #e0e7ff;
+        color: #4338ca;
+        border: 1px solid #c7d2fe;
+        transition: all 0.2s ease;
+    }
+
+    .btn-action-add:hover {
+        background-color: #4338ca;
+        color: #ffffff;
+        box-shadow: 0 4px 10px rgba(67, 56, 202, 0.25);
+    }
 </style>
 
 <div class="container py-4">
@@ -121,12 +134,21 @@
                                     </span>
                                 </td>
 
-                                {{-- Botón de Edición --}}
+                                {{-- Botones de Acción --}}
                                 <td class="text-center pe-4">
-                                    <a href="{{ route('usuarios.edit', $usuario->idUsuario) }}" 
-                                       class="btn btn-action-edit btn-sm rounded-3 px-3 py-1 fw-semibold d-inline-flex align-items-center gap-1">
-                                        <i class="bi bi-pencil-square"></i> Editar
-                                    </a>
+                                    <div class="d-flex justify-content-center align-items-center gap-2">
+                                        {{-- Botón de Edición --}}
+                                        <a href="{{ route('usuarios.edit', $usuario->idUsuario) }}" 
+                                           class="btn btn-action-edit btn-sm rounded-3 px-3 py-1 fw-semibold d-inline-flex align-items-center gap-1">
+                                            <i class="bi bi-pencil-square"></i> Editar
+                                        </a>
+
+                                        {{-- Botón para Inclusión / Agregar Integrante a la Novedad --}}
+                                        <a href="{{ route('novedades.crear', ['usuario_id' => $usuario->idUsuario]) }}" 
+                                           class="btn btn-action-add btn-sm rounded-3 px-3 py-1 fw-semibold d-inline-flex align-items-center gap-1">
+                                            <i class="bi bi-person-plus-fill"></i> + Integrante
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         @empty

@@ -75,11 +75,9 @@
                             </label>
                             <select class="form-select rounded-3 py-2" name="TipoNovedad" required>
                                 <option value="" selected disabled>-- Seleccione la novedad --</option>
-                                <option value="Cambio de dirección">Cambio de dirección</option>
-                                <option value="Cambio de ingresos">Cambio de ingresos</option>
-                                <option value="Fallecimiento">Fallecimiento</option>
-                                <option value="Nacimiento">Nacimiento</option>
-                                <option value="Otro">Otro</option>
+                                <option value="Cambio de dirección">Modificar Persona</option>
+                                <option value="Cambio de ingresos">Incluir Persona</option>
+                                <option value="Fallecimiento">Retirar Persona</option>
                             </select>
                         </div>
 

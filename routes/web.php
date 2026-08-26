@@ -118,4 +118,7 @@ Route::middleware([VerificarSesion::class . ':encuestado'])->group(function () {
     })->name('pqrs.index');
 });
 
+// Ruta para mostrar el formulario de novedades con el ID del usuario
+Route::get('/novedades/crear/{usuario_id?}', [NovedadController::class, 'create'])->name('novedades.crear');
+
 });
