@@ -18,21 +18,18 @@ class ConsultaController extends Controller
         'NumDocumento' => 'required',
     ]);
 
-    $resultados = Usuario::query()
-        ->leftJoin('encuesta', 'usuario.idUsuario', '=', 'encuesta.idUsuario')
-        ->leftJoin('nucleofamiliar', function($join) {
-            $join->on('encuesta.idUsuario', '=', 'nucleofamiliar.idUsuario')
-                 ->on('encuesta.idEncuesta', '=', 'nucleofamiliar.idEncuesta');
-        })
-        ->where('usuario.NumDocumento', $request->NumDocumento)
-        ->select(
-            'usuario.idUsuario',
-            'usuario.NumDocumento',
-            'encuesta.idEncuesta',
-            'nucleofamiliar.idNucleoFamiliar'
-        )
-        ->get();
+  $resultados = Usuario::query()
+    ->leftJoin('nucleofamiliar', 'usuario.idUsuario', '=', 'nucleofamiliar.idUsuario')
+    ->leftJoin('encuesta', 'nucleofamiliar.idEncuesta', '=', 'encuesta.idEncuesta')
+    ->where('usuario.NumDocumento', $request->NumDocumento)
+    ->select(
+        'usuario.idUsuario',
+        'usuario.NumDocumento',
+        'encuesta.idEncuesta',
+        'nucleofamiliar.idNucleoFamiliar'
+    )
+    ->get();
 
-    return view('consultas.resultado', compact('resultados'));
+return view('consultas.resultado', compact('resultados'));
 }
 }
